@@ -3,4 +3,5 @@ class Boat < ActiveRecord::Base
     belongs_to :user
     has_many :equipments
     has_many :sails
+    has_many :crews
 end
