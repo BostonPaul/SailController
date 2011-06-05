@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110605153221) do
+ActiveRecord::Schema.define(:version => 20110605163410) do
 
   create_table "boat_types", :force => true do |t|
     t.datetime "created_at"
@@ -27,6 +27,30 @@ ActiveRecord::Schema.define(:version => 20110605153221) do
     t.integer  "user_id"
     t.integer  "cloned_from"
   end
+
+  create_table "clubs", :force => true do |t|
+    t.string   "name"
+    t.text     "address"
+    t.text     "comment"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "clubs_regatta", :id => false, :force => true do |t|
+    t.integer "club_id"
+    t.integer "regattum_id"
+  end
+
+  add_index "clubs_regatta", ["club_id"], :name => "index_clubs_regatta_on_club_id"
+  add_index "clubs_regatta", ["regattum_id"], :name => "index_clubs_regatta_on_regattum_id"
+
+  create_table "clubs_registrations", :id => false, :force => true do |t|
+    t.integer "club_id"
+    t.integer "registration_id"
+  end
+
+  add_index "clubs_registrations", ["club_id"], :name => "index_clubs_registrations_on_club_id"
+  add_index "clubs_registrations", ["registration_id"], :name => "index_clubs_registrations_on_registration_id"
 
   create_table "crew_types", :force => true do |t|
     t.string   "name"
