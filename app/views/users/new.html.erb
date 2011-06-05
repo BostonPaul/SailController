@@ -1,0 +1,37 @@
+<h1>Opret ny sejler</h1>
+<% @user.password = @user.password_confirmation = nil %>
+
+<%= error_messages_for :user %>
+<%= form_for :user, :url => users_path do |f| -%>
+<p><%= label_tag 'login' %><br/>
+<%= f.text_field :login %></p>
+
+<p><%= label_tag 'Fornavn' %><br/>
+<%= f.text_field :name %></p>
+
+<p><%= label_tag 'Efternavn' %><br/>
+<%= f.text_field :after_name %></p>
+
+<p><%= label_tag 'Adresse' %><br/>
+<%= f.text_field :address %></p>
+
+<p><%= label_tag 'Husnummer' %><br/>
+<%= f.text_field :number %></p>
+
+<p><%= label_tag 'Postnummer' %><br/>
+<%= f.text_field :zipcode %></p>
+
+<p><%= label_tag 'By' %><br/>
+<%= f.text_field :city %></p>
+
+<p><%= label_tag 'email' %><br/>
+<%= f.text_field :email %></p>
+
+<p><%= label_tag 'password' %><br/>
+<%= f.password_field :password %></p>
+
+<p><%= label_tag 'password_confirmation', 'Skriv password igen' %><br/>
+<%= f.password_field :password_confirmation %></p>
+
+<p><%= submit_tag 'Opret' %></p>
+<% end -%>

@@ -1,0 +1,27 @@
+<h1>Listing regatta</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Start date</th>
+    <th>End time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @regatta.each do |regattum| %>
+  <tr>
+    <td><%= regattum.name %></td>
+    <td><%= regattum.start_date %></td>
+    <td><%= regattum.end_time %></td>
+    <td><%= link_to 'Show', regattum %></td>
+    <td><%= link_to 'Edit', edit_regattum_path(regattum) %></td>
+    <td><%= link_to 'Destroy', regattum, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Regattum', new_regattum_path %>

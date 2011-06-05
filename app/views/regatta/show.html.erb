@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @regattum.name %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @regattum.start_date %>
+</p>
+
+<p>
+  <b>End time:</b>
+  <%= @regattum.end_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_regattum_path(@regattum) %> |
+<%= link_to 'Back', regatta_path %>
