@@ -19,6 +19,18 @@
     <%= f.label :name %><br />
     <%= f.text_field :name %>
   </div>
+  <div class="field">
+    <%= f.label :Baad_type %><br />
+	<%= f.select :boat_type_id, options_for_select(@boat_types) %>
+  </div>
+  <div class="field">
+    <%= f.label :Udstyr %><br />
+	<%= f.select :equipments, options_for_select(@equipments),{},{:multiple=>true} %>
+  </div>
+  <div class="field">
+    <%= f.label :Sejl %><br />
+	<%= f.select :sails, options_for_select(@sails), {} ,{:multiple=>true}%>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

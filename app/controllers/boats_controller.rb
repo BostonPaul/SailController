@@ -25,6 +25,9 @@ class BoatsController < ApplicationController
   # GET /boats/new.xml
   def new
     @boat = Boat.new
+    @boat_types = BoatType.all.map {|bt| [bt.name, bt.id]}
+    @sails = Sail.all.map {|bt| [bt.number, bt.id]}
+    @equipments = Equipment.all.map {|bt| [bt.prod_number, bt.id]}
 
     respond_to do |format|
       format.html # new.html.erb
@@ -40,7 +43,13 @@ class BoatsController < ApplicationController
   # POST /boats
   # POST /boats.xml
   def create
-    @boat = Boat.new(params[:boat])
+      eqs = []
+      puts params
+      params[:boat][:equipments].each do |i|
+          eqs << Equipment.find(i)
+      end
+      params[:boat][:equipments] = eqs
+      @boat = Boat.new(params[:boat])
 
     respond_to do |format|
       if @boat.save

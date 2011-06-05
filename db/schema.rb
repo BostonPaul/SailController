@@ -10,11 +10,49 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110605095236) do
+ActiveRecord::Schema.define(:version => 20110605135049) do
+
+  create_table "boat_types", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "name"
+  end
 
   create_table "boats", :force => true do |t|
     t.integer  "number"
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "boat_type_id"
+  end
+
+  create_table "equipment", :force => true do |t|
+    t.integer  "equipment_type_id"
+    t.string   "prod_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "boat_id"
+  end
+
+  create_table "equipment_types", :force => true do |t|
+    t.string   "ident"
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "europe_dinghies", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "owner_license"
+    t.string   "police_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "optimist_dinghies", :force => true do |t|
+    t.integer  "user_id"
+    t.string   "owner_license"
+    t.string   "police_number"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -34,6 +72,22 @@ ActiveRecord::Schema.define(:version => 20110605095236) do
     t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "registrations", :force => true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "boat_id"
+    t.integer  "user_id"
+    t.integer  "regattum_id"
+  end
+
+  create_table "sails", :force => true do |t|
+    t.string   "number"
+    t.string   "prod_number"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "boat_id"
   end
 
   create_table "users", :force => true do |t|

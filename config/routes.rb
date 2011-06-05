@@ -1,4 +1,6 @@
 Sailcontroller::Application.routes.draw do
+  resources :registrations
+
   resources :races
 
   resources :regatta
