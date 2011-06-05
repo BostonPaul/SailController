@@ -13,6 +13,7 @@
 <% @races.each do |race| %>
   <tr>
     <td><%= race.name %></td>
+    <td><%= race.regattum.name %></td>
     <td><%= race.start_time %></td>
     <td><%= race.end_time %></td>
     <td><%= link_to 'Show', race %></td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110605085613) do
+ActiveRecord::Schema.define(:version => 20110605095236) do
 
   create_table "boats", :force => true do |t|
     t.integer  "number"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20110605085613) do
     t.datetime "end_time"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "regattum_id"
   end
 
   create_table "regatta", :force => true do |t|
