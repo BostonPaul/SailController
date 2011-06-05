@@ -83,22 +83,6 @@ ActiveRecord::Schema.define(:version => 20110605163410) do
     t.datetime "updated_at"
   end
 
-  create_table "europe_dinghies", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "owner_license"
-    t.string   "police_number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "optimist_dinghies", :force => true do |t|
-    t.integer  "user_id"
-    t.string   "owner_license"
-    t.string   "police_number"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "races", :force => true do |t|
     t.string   "name"
     t.datetime "start_time"
